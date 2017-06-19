@@ -5,6 +5,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace EDYNAMIC
 {
@@ -15,6 +18,8 @@ namespace EDYNAMIC
 
         protected override void OnCreate(Bundle bundle)
         {
+            MobileCenter.Start("5abc1570-9e89-44a3-b997-0f44a8ede1b3",
+                   typeof(Analytics), typeof(Crashes));
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
